@@ -36,14 +36,23 @@ Problem
 - `docs/deployment/`: Vercel, Railway, and self-managed server trade-offs.
 - `src/` + `tests/`: a deliberately tiny TypeScript reference module used to prove the gates.
 
-## Quick start
+## Tooling contract
 
-Requirements: Node.js 22+ and npm.
+This repository uses **pnpm only**.
+
+Requirements:
+
+- Node.js 22+
+- Corepack enabled
+- pnpm 10.x
 
 ```bash
-npm ci
-npm run verify
+corepack enable
+pnpm install --frozen-lockfile
+pnpm verify
 ```
+
+Do not generate or commit `package-lock.json` or `yarn.lock`. CI rejects mixed package-manager lockfiles.
 
 Then read, in order:
 
@@ -60,7 +69,7 @@ Then read, in order:
 4. Create `plans/active/<issue>-<slug>.md` from `plans/TEMPLATE.md`.
 5. Create a workstream branch/worktree such as `workstream/42-task-priority`.
 6. Implement with tests.
-7. Run `npm run verify` locally.
+7. Run `pnpm verify` locally.
 8. Open a PR and let CI run.
 9. Pass the review frontier: Codex/AI review, human review, or both depending on risk.
 10. Correct findings, merge, deploy, and observe.
