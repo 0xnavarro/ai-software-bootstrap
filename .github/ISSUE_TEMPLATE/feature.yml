@@ -1,0 +1,34 @@
+name: Feature
+description: Propose a behavior or capability change
+title: "[Feature] "
+labels: ["feature"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What problem exists and for whom?
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Desired outcome
+      description: Describe the outcome without prescribing implementation.
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+  - type: textarea
+    id: constraints
+    attributes:
+      label: Constraints / non-goals
+  - type: checkboxes
+    id: process
+    attributes:
+      label: Process
+      options:
+        - label: I understand non-trivial work requires a reviewed spec before an implementation plan.
+          required: true
